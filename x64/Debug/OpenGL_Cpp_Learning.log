@@ -1,2 +1,3 @@
 ﻿  Main.cpp
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_window.obj)' or at 'C:\Users\Evripidis\Desktop\OpenGL-Cpp-Learning\x64\Debug\glfw3.pdb'; linking object as if no debug info
   OpenGL_Cpp_Learning.vcxproj -> C:\Users\Evripidis\Desktop\OpenGL-Cpp-Learning\x64\Debug\OpenGL_Cpp_Learning.exe

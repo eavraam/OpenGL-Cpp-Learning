@@ -169,11 +169,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="default_fragment.frag" />
+    <None Include="default_geometry.geom" />
     <None Include="framebuffer.frag" />
     <None Include="framebuffer.vert" />
     <None Include="light.frag" />
     <None Include="light.vert" />
     <None Include="default_vertex.vert" />
+    <None Include="normals.frag" />
+    <None Include="normals.geom" />
     <None Include="outlining.frag" />
     <None Include="outlining.vert" />
     <None Include="skybox.frag" />
