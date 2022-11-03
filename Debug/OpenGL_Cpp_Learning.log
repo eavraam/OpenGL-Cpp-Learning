@@ -1,0 +1,8 @@
+﻿Main.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function _main
+Main.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function _main
+Main.obj : error LNK2019: unresolved external symbol _glfwWindowHint referenced in function _main
+Main.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function _main
+Main.obj : error LNK2019: unresolved external symbol _glfwDestroyWindow referenced in function _main
+Main.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function _main
+C:\Users\FamilyPC\Desktop\OpenGL_Cpp_Learning\\Libraries\lib\glfw3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\FamilyPC\Desktop\OpenGL_Cpp_Learning\Debug\OpenGL_Cpp_Learning.exe : fatal error LNK1120: 6 unresolved externals
