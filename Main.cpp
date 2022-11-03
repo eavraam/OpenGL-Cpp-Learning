@@ -56,17 +56,22 @@ int main()
 
 	// Enables the Depth Buffer
 	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
 
 	// Creates camera object
 	Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
-	Model model("models/sword/scene.gltf");
+	//Model model("models/sword/scene.gltf");
+	Model ground("models/ground/scene.gltf");
+	Model trees("models/trees/scene.gltf");
+
+	
 
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
 	{
 		// Specify the color of the background
-		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+		glClearColor(0.85f, 0.85f, 0.90f, 1.0f);
 		// Clean the back buffer and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -76,7 +81,8 @@ int main()
 		// Updates and exports the camera matrix to the Vertex Shader
 		camera.updateMatrix(45.0f, 0.1f, 100.0f);
 
-		model.Draw(shaderProgram, camera);
+		ground.Draw(shaderProgram, camera);
+		trees.Draw(shaderProgram, camera);
 
 
 		// Swap the back buffer with the front buffer
