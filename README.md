@@ -27,4 +27,5 @@ My journey to learning OpenGL using the C++ programming language. My goal is to 
 	
 * To the more advanced topics:
 >	Depth testing, Z-fighting and fog effect,
-	Stencil Buffer & Outlining
+	Stencil Buffer & Outlining,
+	Face Culling & FPS Counter.
