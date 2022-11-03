@@ -169,6 +169,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="default_fragment.frag" />
+    <None Include="framebuffer.frag" />
+    <None Include="framebuffer.vert" />
     <None Include="light.frag" />
     <None Include="light.vert" />
     <None Include="default_vertex.vert" />
