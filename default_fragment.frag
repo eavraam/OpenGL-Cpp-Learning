@@ -122,10 +122,5 @@ float logisticDepth(float depth)
 void main()
 {
 	// Outputs final color
-	//FragColor = spotLight();
-	//FragColor = vec4(vec3(linearizeDepth(gl_FragCoord.z) / far), 1.0f);
-	//FragColor = vec4(vec3(gl_FragCoord.z), 1.0f);
-	
-	float depth = logisticDepth(gl_FragCoord.z);
-	FragColor = directionalLight() * (1.0f - depth) + vec4(depth * vec3(0.85f, 0.85f, 0.90f), 1.0f);
+	FragColor = directionalLight();
 }

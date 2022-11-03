@@ -43,6 +43,8 @@ int main()
 	// Generates Shader object using shaders default.vert and default.frag
 	Shader shaderProgram("default_vertex.vert", "default_fragment.frag");
 
+	Shader outliningProgram("outlining.vert", "outlining.frag");
+
 
 	glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 	glm::vec3 lightPos = glm::vec3(0.5f, 0.5f, 0.5f);
@@ -56,14 +58,18 @@ int main()
 
 	// Enables the Depth Buffer
 	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LESS);
+	glEnable(GL_STENCIL_TEST);
+	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+
+
 
 	// Creates camera object
 	Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
 	//Model model("models/sword/scene.gltf");
-	Model ground("models/ground/scene.gltf");
-	Model trees("models/trees/scene.gltf");
+	//Model ground("models/ground/scene.gltf");
+	//Model trees("models/trees/scene.gltf");
+	Model model("models/crow/scene.gltf");
 
 	
 
@@ -71,9 +77,9 @@ int main()
 	while (!glfwWindowShouldClose(window))
 	{
 		// Specify the color of the background
-		glClearColor(0.85f, 0.85f, 0.90f, 1.0f);
+		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		// Clean the back buffer and depth buffer
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 
 		// Handles camera inputs
@@ -81,9 +87,32 @@ int main()
 		// Updates and exports the camera matrix to the Vertex Shader
 		camera.updateMatrix(45.0f, 0.1f, 100.0f);
 
-		ground.Draw(shaderProgram, camera);
-		trees.Draw(shaderProgram, camera);
 
+		// Make it so the stencil test always passes
+		glStencilFunc(GL_ALWAYS, 1, 0xFF);
+		// Enable modifying of the stencil buffer
+		glStencilMask(0xFF);
+		// Draw the normal model
+		model.Draw(shaderProgram, camera);
+
+
+		// Make it so only the pixels without the value 1 pass the test
+		glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+		// Disable modifying of the stencil buffer
+		glStencilMask(0x00);
+		// Disable the depth buffer
+		glDisable(GL_DEPTH_TEST);
+
+		outliningProgram.Activate();
+		glUniform1f(glGetUniformLocation(outliningProgram.ID, "outlining"), 0.05f);
+		model.Draw(outliningProgram, camera);
+
+		// Enable modifying of the stencil buffer
+		glStencilMask(0xFF);
+		// Clear stencil buffer
+		glStencilFunc(GL_ALWAYS, 0, 0xFF);
+		// Enable the depth buffer
+		glEnable(GL_DEPTH_TEST);
 
 		// Swap the back buffer with the front buffer
 		glfwSwapBuffers(window);
