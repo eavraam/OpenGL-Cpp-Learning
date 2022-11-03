@@ -30,4 +30,5 @@ My journey to learning OpenGL using the C++ programming language. My goal is to 
 	Stencil Buffer & Outlining,
 	Face Culling & FPS Counter,
 	Transparency & Blending,
-	Framebuffer & Post-processing.
+	Framebuffer & Post-processing,
+	Cubemap & Skyboxes.

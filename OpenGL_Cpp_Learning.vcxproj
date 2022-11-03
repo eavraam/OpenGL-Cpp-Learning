@@ -176,6 +176,8 @@
     <None Include="default_vertex.vert" />
     <None Include="outlining.frag" />
     <None Include="outlining.vert" />
+    <None Include="skybox.frag" />
+    <None Include="skybox.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
