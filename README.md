@@ -9,6 +9,8 @@ My journey to learning OpenGL using the C++ programming language. My goal is to 
 
 Note: As a genius that I am, I do not keep every step of this journey as a separate step (Remembered that at the 20/30 tutorial video). However, more details on the process and the know-how of things can be found: i) in the commit history of github, ii) the source code of the tutorial.
 
+Note 2: Due to GitHub's free plan storage restrictions, I will not be able to update the repo until I upgrade. I will complete the tutorial locally, and will move to my first official C++/OpenGL project, which will be publicly available after the GitHub plan upgrade. At the same time, I will also study more C++, in order to become more knowledgeable and confident with the language. See you soon!
+
 ## Topics covered so far
 
 * Getting Started:
