@@ -29,11 +29,22 @@ Note 2: Due to GitHub's free plan storage restrictions, I will not be able to up
 	Mesh Class,
 	Model Loading using a custom importer.
 	
-* To the more advanced topics:
+* To the more advanced general topics:
 >	Depth testing, Z-fighting and fog effect,
 	Stencil Buffer & Outlining,
 	Face Culling & FPS Counter,
 	Transparency & Blending,
 	Framebuffer & Post-processing,
 	Cubemap & Skyboxes,
-	Geometry Shader.
+	Geometry Shader,
+	Instancing,
+	Anti-Aliasing (MSAA).
+	
+* Advanced lighting magic:
+>	Blinn-Phong Lighting (upgrade from just Phong),
+	Gamma Correction,
+	Shadow Mapping (Directional, Spotlight, Pointlight),
+	Normal Maps,
+	Parallax Occlusion Mapping,
+	HDR,
+	Bloom effect.
